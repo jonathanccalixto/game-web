@@ -29,7 +29,7 @@ export default createGlobalStyle`
   }
   html, body, #root {
     box-shadow:  0 0 10px -1px rgba(var(--light-base), 0.05);
-    min-height: 600px;
+    height: 100%;
     min-height: 800px;
     margin-left: auto;
     margin-right: auto;
