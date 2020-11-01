@@ -18,19 +18,9 @@
         "ecmaVersion": 12,
         "sourceType": "module"
     },
-    "plugins": [
-        "react",
-        "react-hooks",
-        "@typescript-eslint",
-        "prettier"
-    ],
+    "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
     "rules": {
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn",
-        "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
         "import/prefer-default-export": "off",
-        "camelcase": "off",
-        "@typescript-eslint/ban-types": "off",
         "import/extensions": [
             "error",
             "ignorePackages",
@@ -39,8 +29,27 @@
                 "tsx": "never"
             }
         ],
+        "no-unused-expressions": "off",
         "no-use-before-define": "off",
-        "prettier/prettier": "error"
+        "prettier/prettier": "error",
+        "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
+        "react/jsx-one-expression-per-line": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react/prop-types": "off",
+        "react-hooks/exhaustive-deps": "warn",
+        "react-hooks/rules-of-hooks": "error",
+        "@typescript-eslint/naming-convention": [
+            "error",
+            {
+                "selector": "interface",
+                "format": ["PascalCase"],
+                "custom": { "regex": "^(I[A-H J-Z]|TI)", "match": true }
+            }
+        ],
+        "@typescript-eslint/explicit-function-return-type": [
+            "error",
+            { "allowExpressions": true }
+        ]
     },
     "settings": {
         "import/resolver": {
