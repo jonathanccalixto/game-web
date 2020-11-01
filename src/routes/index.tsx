@@ -6,7 +6,7 @@ import ChooseGame from 'pages/ChooseGame';
 const Routes: React.FC = () => {
   return (
     <Switch>
-      <Route path="/" component={ChooseGame} />
+      <Route exact path="/" component={ChooseGame} />
 
       <Redirect to="/" />
     </Switch>

@@ -46,6 +46,15 @@ export const Card = styled.li`
     margin-bottom: 14px;
   }
 
+  a {
+    color: var(--primary);
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   :hover {
     background: rgba(var(--primary-base), 0.2);
     transition: 350ms all;

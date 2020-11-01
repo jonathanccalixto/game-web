@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Image from 'components/Image';
 
@@ -21,8 +22,10 @@ const ChooseGame: React.FC = () => {
       <Cards>
         {games.map(game => (
           <Card>
-            <Image alt={game.name} src={game.src} width="120px" />
-            {game.name}
+            <Link to={game.route}>
+              <Image alt={game.name} src={game.src} width="120px" />
+              {game.name}
+            </Link>
           </Card>
         ))}
       </Cards>
