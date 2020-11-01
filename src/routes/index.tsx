@@ -1,7 +1,9 @@
 import React from 'react';
 
+import ChooseGame from 'pages/ChooseGame';
+
 const Routes: React.FC = () => {
-  return <div>Hello World</div>;
+  return <ChooseGame />;
 };
 
 export default Routes;
