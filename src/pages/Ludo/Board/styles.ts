@@ -23,19 +23,3 @@ export const Container = styled.div`
     }
   }
 `;
-
-export const Field = styled.rect`
-  height: 37px;
-  width: 37px;
-  stroke-width: 2;
-`;
-
-export const FinishField = styled.div`
-  height: 45px;
-  width: 45px;
-`;
-
-export const BlankField = styled.div`
-  height: 180px;
-  width: 180px;
-`;

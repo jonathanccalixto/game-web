@@ -11,12 +11,21 @@ interface IFinishField {
   bg: string;
   border: string;
 }
+interface IHeadQuarters {
+  name: string;
+  cx: string;
+  cy: string;
+  r: string;
+  bg: string;
+  border: string;
+}
 
 const colors: string[] = ['yellow', '#65a7dd', '#f81404', '#75ad5b'];
 const border = 'black';
 const bg = 'white';
 const size = 38;
-const init = 2;
+const borderSize = 2;
+const init = borderSize;
 const sizeP5 = `${init + 5 * size}`;
 const sizeP6 = `${init + 6 * size}`;
 const sizeP7 = `${init + 7 * size}`;
@@ -24,7 +33,7 @@ const sizeP75 = `${init + 7.5 * size}`;
 const sizeP8 = `${init + 8 * size}`;
 const sizeP9 = `${init + 9 * size}`;
 
-export const buildFields = (): IField[] => {
+const buildFields = (): IField[] => {
   const fields: IField[] = [];
 
   fields[48] = { name: '49', x: sizeP5, y: sizeP5, bg, border };
@@ -95,7 +104,7 @@ export const buildFields = (): IField[] => {
   return fields;
 };
 
-export const buildFinishFields = (): IFinishField[] => {
+const buildFinishFields = (): IFinishField[] => {
   const fields: IFinishField[] = [
     {
       name: 'f1',
@@ -125,3 +134,44 @@ export const buildFinishFields = (): IFinishField[] => {
 
   return fields;
 };
+
+const buildHeadquarters = (): IHeadQuarters[] => {
+  const fields: IHeadQuarters[] = [
+    {
+      name: 'YellowHQ',
+      cx: `${init + 12.5 * size}`,
+      cy: `${init + 3 * size}`,
+      r: `${(5 * size) / 2}`,
+      bg: colors[0],
+      border,
+    },
+    {
+      name: 'BlueHQ',
+      cx: `${init + 12.5 * size}`,
+      cy: `${init + 12.5 * size}`,
+      r: `${(5 * size) / 2}`,
+      bg: colors[1],
+      border,
+    },
+    {
+      name: 'RedHQ',
+      cx: `${init + 3 * size}`,
+      cy: `${init + 12.5 * size}`,
+      r: `${(5 * size) / 2}`,
+      bg: colors[2],
+      border,
+    },
+    {
+      name: 'BlueHQ',
+      cx: `${init + 3 * size}`,
+      cy: `${init + 3 * size}`,
+      r: `${(5 * size) / 2}`,
+      bg: colors[3],
+      border,
+    },
+  ];
+
+  return fields;
+};
+
+export { borderSize, size, buildFields, buildFinishFields, buildHeadquarters };

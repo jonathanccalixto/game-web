@@ -1,26 +1,48 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
 
-import {buildFields, buildFinishFields } from './constants'
-import { Container, Field } from './styles';
+import {
+  borderSize,
+  buildFields,
+  buildFinishFields,
+  buildHeadquarters,
+  size,
+} from './constants';
+import { Container } from './styles';
 
-const fields = buildFields()
-const finishFields = buildFinishFields()
+const fields = buildFields();
+const finishFields = buildFinishFields();
+const headquarters = buildHeadquarters();
 
 const Board: React.FC = () => {
   return (
     <Container>
       <div>
         <svg>
-          {fields.map(({name, bg, border, x, y }) => (
-            <Field key={name} name={name} fill={bg} x={x} y={y} stroke={border} />
+          {fields.map(({ bg, border, ...rest }) => (
+            <rect
+              {...rest}
+              key={rest.name}
+              fill={bg}
+              height={size}
+              width={size}
+              stroke={border}
+              strokeWidth={borderSize}
+            />
           ))}
-          {finishFields.map(({name, points, bg, border}) => (
+          {finishFields.map(({ bg, border, ...rest }) => (
             <polygon
-              key={name}
-              name={name}
-              points={points}
-              style={{ fill: bg, stroke: border, strokeWidth:2 }}
+              {...rest}
+              key={rest.name}
+              style={{ fill: bg, stroke: border, strokeWidth: borderSize }}
+            />
+          ))}
+          {headquarters.map(({ bg, border, ...rest }) => (
+            <circle
+              {...rest}
+              key={rest.name}
+              stroke={border}
+              strokeWidth={borderSize}
+              fill={bg}
             />
           ))}
         </svg>
